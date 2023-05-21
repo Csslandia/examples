@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/csslandia/style.min.css"
+            rel="stylesheet"
+        />
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <!-- navbar -->
+        <div class="navbar">
+            <div>
+                <a href="#">
+                    <img src="https://csslandia.com/csslandia.svg" alt="logo" />
+                    <div class="fw-6 ml-6">Csslandia</div>
+                </a>
+                <button class="hamburger sm" onclick="toggleNavbar(this)">
+                    <span></span>
+                </button>
+            </div>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#our-team">Our Team</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+        <!-- navbar -->
+
+        <div class="container">
+            <div class="flexbox py-8">
+                <!-- alert -->
+                <button class="btn bg-a m-4" onclick='toggle("#my-alert")'>
+                    Toggle Alert
+                </button>
+
+                <div
+                    class="fade fixed bottom right w-80% max-w-17 m-7"
+                    id="my-alert"
+                >
+                    <div class="alert">
+                        <div>This is alert</div>
+                        <button
+                            class="i-close sm"
+                            onclick='hide("#my-alert")'
+                        ></button>
+                    </div>
+                </div>
+                <!-- alert -->
+
+                <!-- canvas -->
+                <button class="btn bg-a m-4" onclick='showCanvas("#my-canvas")'>
+                    Open Canvas
+                </button>
+
+                <div class="canvas" id="my-canvas">
+                    <div class="w-80% max-w-17 p-8">This is Canvas!</div>
+                    <div onclick="hideCanvas()" aria-hidden="true"></div>
+                </div>
+                <!-- canvas -->
+
+                <!-- modal -->
+                <button class="btn bg-a m-4" onclick='showModal("#my-modal")'>
+                    Open Modal
+                </button>
+
+                <div class="modal" id="my-modal">
+                    <div>
+                        <div class="fs-6 bold">
+                            <h5>This is the title of the modal</h5>
+                            <button
+                                class="i-close sm"
+                                onclick="hideModal()"
+                            ></button>
+                        </div>
+                        <div>This is Modal!</div>
+                        <div class="x-right">
+                            <button
+                                class="btn bd-a c-a mr-5"
+                                onclick="hideModal()"
+                            >
+                                Close
+                            </button>
+                            <input type="submit" class="btn bg-a" />
+                        </div>
+                    </div>
+                </div>
+                <!-- modal -->
+            </div>
+
+            <!-- folder -->
+            <div class="folder py-8">
+                <div onclick="this.closest('.folder').classList.toggle('open')">
+                    This is Folder
+                </div>
+                <div>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Odit magnam esse, labore laudantium suscipit ex iure ad,
+                    dignissimos voluptatum obcaecati nesciunt quam perferendis
+                    ab quibusdam quod et sint maxime quaerat!
+                </div>
+            </div>
+            <!-- folder -->
+
+            <!-- folder group -->
+            <div class="folder-group py-8">
+                <div class="folder">
+                    <div onclick="toggleFolder(this)">This is Folder</div>
+                    <div>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Odit magnam esse, labore laudantium suscipit ex iure ad,
+                        dignissimos voluptatum obcaecati nesciunt quam
+                        perferendis ab quibusdam quod et sint maxime quaerat!
+                    </div>
+                </div>
+                <div class="folder">
+                    <div onclick="toggleFolder(this)">This is Folder</div>
+                    <div>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Odit magnam esse, labore laudantium suscipit ex iure ad,
+                        dignissimos voluptatum obcaecati nesciunt quam
+                        perferendis ab quibusdam quod et sint maxime quaerat!
+                    </div>
+                </div>
+                <div class="folder">
+                    <div onclick="toggleFolder(this)">This is Folder</div>
+                    <div>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Odit magnam esse, labore laudantium suscipit ex iure ad,
+                        dignissimos voluptatum obcaecati nesciunt quam
+                        perferendis ab quibusdam quod et sint maxime quaerat!
+                    </div>
+                </div>
+            </div>
+            <!-- folder group -->
+
+            <!-- tabs -->
+            <div class="tabs py-8">
+                <div>
+                    <button class="bg" onclick="toggleTabs(this)">Tab 1</button>
+                    <button onclick="toggleTabs(this)">Tab 2</button>
+                    <button onclick="toggleTabs(this)">Tab 3</button>
+                </div>
+                <div class="bg">
+                    <div>Content 1</div>
+                    <div class="none">Content 2</div>
+                    <div class="none">Content 3</div>
+                </div>
+            </div>
+            <!-- tabs -->
+
+            <div class="flexbox mx--6 py-6">
+                <div class="w-50% mob:w-100% p-6">
+                    <!-- viewer -->
+                    <img
+                        src="https://picsum.photos/1500/1000"
+                        alt="random image"
+                        class="pointer"
+                        onclick='showViewer("#my-viewer")'
+                        aria-hidden="true"
+                    />
+
+                    <div class="viewer fade" id="my-viewer">
+                        <button
+                            class="i-close lg"
+                            onclick='hideViewer("#my-viewer")'
+                        ></button>
+                        <img
+                            src="https://picsum.photos/1500/1000"
+                            alt="random image"
+                        />
+                    </div>
+                    <!-- viewer -->
+                </div>
+                <div class="w-50% mob:w-100% p-6">
+                    <!-- viewer text -->
+                    <img
+                        src="https://picsum.photos/1500/1000"
+                        alt="random image"
+                        class="pointer"
+                        onclick='showViewer("#my-second-viewer")'
+                        aria-hidden="true"
+                    />
+
+                    <div class="viewer fade" id="my-second-viewer">
+                        <button
+                            class="i-close lg"
+                            onclick='hideViewer("#my-second-viewer")'
+                        ></button>
+                        <img
+                            src="https://picsum.photos/1500/1000"
+                            alt="random image"
+                        />
+                        <div class="mt-6">This is my superb image</div>
+                    </div>
+                    <!-- viewer text -->
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
